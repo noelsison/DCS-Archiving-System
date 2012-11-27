@@ -4,7 +4,11 @@ from django.conf.urls import patterns, include, url
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('DCSArchivingSystem.testapp.views',
+    # 'DCSArchivingSystem.testapp.views' is a prefix
+    # If prefix is empty (Eg. ''), we will need to use
+    # DCSArchivingSystem.testapp.views.main_page instead of just main_page
+    
     # Examples:
     # url(r'^$', 'DCSArchivingSystem.views.home', name='home'),
     # url(r'^DCSArchivingSystem/', include('DCSArchivingSystem.foo.urls')),
@@ -14,4 +18,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
+	
+	# Main Page
+    url(r'^$', 'main_page'), 
+    # URL format:
+    # If browser url is www.mypage.com/pathInBrowser
+    # Just add url(r'^pathInBrowser$', 'function in views.py'),
+    # Don't forget the comma at the end of url(...),
 )
