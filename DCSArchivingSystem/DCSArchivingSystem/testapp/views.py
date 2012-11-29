@@ -4,11 +4,12 @@ from django.shortcuts import render_to_response
 
 # This is the function that is called by a url(...), in urls.py
 def main_page(request):
-    nameList = ['Noel', 'Cha', 'Carl']
+    nameList = ['Noel', 'Cha', 'Carl', 'Marc']
     lastEditedBy = 'Carl'
     message1 = 'blablabla'
     message2 = 'Sup, Carl'
     message3= 'Hi, me!'
+    message4= "..."
     # Display page without passing any variable
     # return render_to_response('index.html')
     
@@ -16,4 +17,4 @@ def main_page(request):
     # by adding a "dictionary" argument like:
     # { 'nameInHtmlPage': variableName , 'nameInHtmlAgain': anotherVariableHere, ... }
     return render_to_response('index.html', { 'nameList': nameList , 'lastEditedBy': lastEditedBy, 'fromNoel': message1, 'fromCha': message2 , 'fromCarl'
-	:message3})
+	:message3, 'fromMarc': message4})
