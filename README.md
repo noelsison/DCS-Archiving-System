@@ -30,6 +30,6 @@
 * Carl Yu
 * Noel Sison
 * Marc Lopez
-* Jas Mendoza
+* Jasmine Tolentino
 * Maricia Balayan
 * John Smith Paraggua
