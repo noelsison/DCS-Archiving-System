@@ -5,7 +5,7 @@ from django.shortcuts import render_to_response
 # This is the function that is called by a url(...), in urls.py
 def main_page(request):
     nameList = ['Noel', 'Cha', 'Carl', 'Marc', 'Smit', 'Jas']
-    lastEditedBy = 'Smit'
+    lastEditedBy = 'Jas'
     message1 = 'blablabla'
     message2 = 'Sup, Carl'
     message3= 'Hi, me!'
