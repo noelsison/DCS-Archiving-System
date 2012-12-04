@@ -12,7 +12,6 @@ def index(request):
 
 def dashboard(request):
     return render_to_response('dashboard.html', { 'user': request.user })
-<<<<<<< HEAD
     
 def log_in(request):
     state = ""
@@ -36,8 +35,6 @@ def log_in(request):
 def log_out(request):
     logout(request)
     return HttpResponseRedirect('/')
-    
-=======
     
 def log_in(request):
     state = ""
