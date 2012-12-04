@@ -4,6 +4,8 @@
 * [Git](http://git-scm.com/downloads) _Download a native GUI client for ease of use_
 * [Python](http://www.python.org/download/) _Get version 2.7.x_
 * [Django](https://www.djangoproject.com/download/) _Get version 1.4.2_
+* [MySQL](http://www.mysql.com/downloads/installer/)
+* MySQL-Python - [Official (x86)](http://sourceforge.net/projects/mysql-python/) - [Unofficial (has x64)](http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python)
 
 ### Setting up the tools:
 1. Install Git (Preferably using a native GUI client.)
@@ -20,10 +22,19 @@
 <br><br>
 4. Install Django by: unzip the folder > open cmd > go to folder > type  "python setup.py install"
 
+5. Install MySQL and MySQL-Python
+
 ### Getting the Project
 1. Clone [https://github.com/noelsison2/DCS-Archiving-System](https://github.com/noelsison2/DCS-Archiving-System)
+
+2. Set up MySQL
+
+ 1. Open MySQL Workbench and click "Manage Security" under Server Administration
+ 2. Add two accounts (User@From host): CS192@localhost and CS192@127.0.0.1 both with "DB Manager" role enabled
+ 3. Add "New Connection" under SQL Development. User: CS192 Hostname: 127.0.0.1
+<br><br>
 2. Open _DCS-Archiving-System\DCSArchivingSystem_ in Command Prompt
-3. python manage.py runserver
+3. Enter: python manage.py syncdb and python manage.py runserver
 4. Open _127.0.0.1:8000_ in browser
 
 ### The Team:

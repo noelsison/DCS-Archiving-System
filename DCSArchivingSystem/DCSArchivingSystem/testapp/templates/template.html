@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% comment %}
+	Base template when logged in
+{% endcomment %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    {% comment %}
+        We can put a navigation bar here to be seen in every page
+    {% endcomment %}
+    <div>
+        You are logged in as {{ user.first_name }} {{ user.last_name }}. 
+        <a href="/logout/">Logout</a>
+    </div>
+    {% block content %}{% endblock %}
+{% endblock %}
