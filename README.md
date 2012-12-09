@@ -6,6 +6,7 @@
 * [Django](https://www.djangoproject.com/download/) _Get version 1.4.2_
 * [MySQL](http://www.mysql.com/downloads/installer/)
 * MySQL-Python - [Official (x86)](http://sourceforge.net/projects/mysql-python/) - [Unofficial (has x64)](http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python)
+* [Python Image Library](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pil) - Required by ImageField model
 
 ### Setting up the tools:
 1. Install Git (Preferably using a native GUI client.)
@@ -22,7 +23,7 @@
 <br><br>
 4. Install Django by: unzip the folder > open cmd > go to folder > type  "python setup.py install"
 
-5. Install MySQL and MySQL-Python
+5. Install MySQL, MySQL-Python and Python Image Library
 
 ### Getting the Project
 1. Clone [https://github.com/noelsison2/DCS-Archiving-System](https://github.com/noelsison2/DCS-Archiving-System)
