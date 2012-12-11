@@ -32,7 +32,7 @@ class UserProfile(models.Model):
     user            = models.OneToOneField(User)
     middlename      = models.CharField(max_length=32, null=True, blank=True)
     photo           = models.FileField(upload_to='photos', null=True, blank=True)
-    birthday        = models.DateTimeField(null=True, blank=True)
+    birthday        = models.DateField(null=True, blank=True)
     course          = models.ForeignKey(Course, null=True, blank=True)
     highest_degree_attained = models.CharField(max_length=100, null=True, blank=True)
     length_of_service       = models.CharField(max_length=100, null=True, blank=True)

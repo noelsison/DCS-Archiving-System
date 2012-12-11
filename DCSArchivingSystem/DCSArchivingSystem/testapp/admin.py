@@ -35,14 +35,14 @@ class Alternate_emailInline(admin.StackedInline):
         model = Alternate_email
         extra = 1
 
-class UserProfileAdmin(admin.ModelAdmin):
+class UserProfileAdmin(UserAdmin):
         list_display = ('username', 'first_name', 'last_name', 'is_staff', 'is_active', 'is_superuser')
-        fieldsets = [
-                ('Login credentials',           {'fields': ['username','password','is_staff', 'is_active', 'is_superuser']}),
-                ('Date information',            {'fields': ['last_login', 'date_joined']}),
-                ('Personal information',        {'fields': ['email','first_name', 'last_name']}),
-        ]
-        inlines=[UserProfileInline, ContactInline, Alternate_emailInline]
+        #fieldsets = [
+        #        ('Login credentials',           {'fields': ['username','password','is_staff', 'is_active', 'is_superuser']}),
+        #        ('Date information',            {'fields': ['last_login', 'date_joined']}),
+        #        ('Personal information',        {'fields': ['email','first_name', 'last_name']}),
+        #]
+        inlines=[UserProfileInline, ContactInline, Alternate_emailInline,]
 
 
 admin.site.unregister(User)
