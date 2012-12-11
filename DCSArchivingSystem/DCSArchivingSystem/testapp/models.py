@@ -18,14 +18,14 @@ class Department(models.Model):
     college         = models.ForeignKey(College)
 
     def __unicode__(self):
-        return self.name + ", " + self.college
+        return self.name + ", " + self.college.name
 
 class Course(models.Model):
     name            = models.CharField(max_length=64)
     department      = models.ForeignKey(Department)
 
     def __unicode__(self):
-        return self.name + ", " + self.department
+        return self.name + ", " + self.department.name
 
 
 class UserProfile(models.Model):
