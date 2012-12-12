@@ -3,8 +3,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
+import scanner
 
 # Create your views here.
+
+#To call scanner.py use:
+#scanner.SimpleApp(0).MainLoop()
 
 # This is the function that is called by a url(...), in urls.py
 def index(request):
