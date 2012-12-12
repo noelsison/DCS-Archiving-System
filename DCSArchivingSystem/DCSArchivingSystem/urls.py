@@ -25,6 +25,9 @@ urlpatterns = patterns('DCSArchivingSystem.testapp.views',
 	# Login/Logout
     url(r'^login/$', 'log_in'),
     url(r'^logout/$', 'log_out'),
+
+    # Scan
+    url(r'^scan/$', 'scan'),
     
     # Main Page
     url(r'^$', 'index'),

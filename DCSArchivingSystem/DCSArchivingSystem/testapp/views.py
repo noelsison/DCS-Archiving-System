@@ -16,6 +16,10 @@ def index(request):
 
 def dashboard(request):
     return render_to_response('dashboard.html', { 'user': request.user })
+
+def scan(request):
+    scanner.SimpleApp(0).MainLoop()
+    return render_to_response('scan.html')
     
 def log_in(request):
     state = ""
@@ -40,7 +44,7 @@ def log_out(request):
     logout(request)
     return HttpResponseRedirect('/')
     
-def log_in(request):
+"""def log_in(request):
     state = ""
     username = password = ''
     if request.POST:
@@ -61,4 +65,4 @@ def log_in(request):
 
 def log_out(request):
     logout(request)
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/')"""
