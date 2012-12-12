@@ -7,6 +7,10 @@
 * [MySQL](http://www.mysql.com/downloads/installer/)
 * MySQL-Python - [Official (x86)](http://sourceforge.net/projects/mysql-python/) - [Unofficial (has x64)](http://www.lfd.uci.edu/~gohlke/pythonlibs/#mysql-python)
 * [Python Image Library](http://www.lfd.uci.edu/~gohlke/pythonlibs/#pil) - Required by ImageField model
+* [TWAINmodule] (http://www.lfd.uci.edu/~gohlke/pythonlibs/#twainmodule) - Required by scanner.py
+* wxPython - [Official] (http://www.wxpython.org/download.php#stable) - [Unofficial (contains wxPython-common for Windows)] (http://www.lfd.uci.edu/~gohlke/pythonlibs/#wxpython) Required by scanner.py
+
+
 
 ### Setting up the tools:
 1. Install Git (Preferably using a native GUI client.)
