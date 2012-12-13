@@ -1,0 +1,29 @@
+{% extends "template2.html" %}
+
+<html>      
+
+<title> Users </title>
+    
+
+    
+
+{%block content%}    
+
+<h3 align=center>Users:</h3>
+    
+
+<table border=1 width=80% align=center>
+    
+
+<tr><th>User ID</th><th>Last Name</th><th>First Name</th><th>Email</th></tr>
+    {% for a in users_list %}
+        <tr><td>{{ a.id }}</td><td>{{ a.last_name }}</td><td>{{ a.first_name }}</td><td>{{ a.email }}</td></tr>
+    {% endfor %}
+    
+
+</table>
+    
+
+{% endblock %}
+
+</html>

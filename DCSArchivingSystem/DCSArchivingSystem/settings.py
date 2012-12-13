@@ -79,6 +79,9 @@ STATICFILES_DIRS = (
     os.path.join(SITE_ROOT, 'testapp/static'),
 )
 
+# URL of the login page.
+LOGIN_URL = '/login/'
+
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (

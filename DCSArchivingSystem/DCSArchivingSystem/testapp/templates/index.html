@@ -3,15 +3,14 @@
 	Index/Home Page
 {% endcomment %}
 
-{% block head %}
-    <title>DCS Archiving System</title>
+{% block title %}
+
 {% endblock %}
 
-{% block body %}
-    This is the home page :)<br><br>
-    <a href="/admin/">Django administration login</a><br>
-    <a href="/login/">Login</a><br>
-	<a href="/scan/">Scan</a><br>
-    Username and Password: admin
-    
+{% block content %}	
+        <div class="hero-unit">
+            <h1>DCS Archiving System</h1>
+            <p>For the management of files and transactions of the faculty of the Department of Computer Science in UP Diliman.</p>
+			</h1>			
+		</div>
 {% endblock %}

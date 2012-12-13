@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% comment %}
-This is the main template for all public pages.
+	Base template when logged in
 {% endcomment %}
 
 {% block head %}
@@ -17,8 +17,9 @@ This is the main template for all public pages.
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
         <ul class="nav pull-right">
-            <a class="btn btn-primary" href="/login/">Login</a>
-            <a class="btn btn-primary" href="/admin/">Login as Admin</a>
+            <a class="btn btn-primary" href="/dashboard/">Home</a>
+            <a class="btn btn-primary" href="/users/">View Users</a>
+            <a class="btn btn-primary" href="/logout/">Log out</a>
         </ul>
         </div>
     </div>
@@ -26,10 +27,12 @@ This is the main template for all public pages.
     <p class="template_body">
     {% block content %}{% endblock %}
     </p>
-
+	
     <footer>
         <br>
         <span class="pull-right">&copy; DCS Archiving System 2012</span>
     </footer>
     </div>
+
+
 {% endblock %}

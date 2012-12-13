@@ -29,8 +29,12 @@ urlpatterns = patterns('DCSArchivingSystem.testapp.views',
     # Scan
     url(r'^scan/$', 'scan'),
     
+    #Users Page
+    url(r'^users/$', 'view_users'),
+
     # Main Page
     url(r'^$', 'index'),
+
     
     # URL format:
     # If browser url is www.mypage.com/pathInBrowser

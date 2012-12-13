@@ -1,12 +1,28 @@
-{% extends "template.html" %}
+{% extends "template2.html" %}
 {% comment %}
 	Logged in landing page or home page
 {% endcomment %}
 
-{% block head %}
+{% block title %}
     <title>Dashboard</title>
 {% endblock %}
 
 {% block content %}
-    This is the dashboard.
+
+
+
+	
+	<div class="hero-unit">
+		<h1>Welcome</h1>
+			<p>Start by scanning a file.</p>
+		</h1>			
+			
+		<form method="LINK" action="/scan/">
+		<button class="btn btn-primary" input type="submit" calue="Scan">Scan</button>
+		</form>
+			
+		</div>
+		
+    </div>
+
 {% endblock %}

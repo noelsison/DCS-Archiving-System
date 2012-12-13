@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 import scanner
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -12,16 +13,28 @@ import scanner
 
 # This is the function that is called by a url(...), in urls.py
 def index(request):
-    return render_to_response('index.html')
+    if request.user.is_authenticated():
+        return render_to_response('dashboard.html', {'user': request.user})
+    else:
+        return render_to_response('index.html')
 
+@login_required
 def dashboard(request):
     return render_to_response('dashboard.html', { 'user': request.user })
 
+@login_required
 def scan(request):
     scanner.SimpleApp(0).MainLoop()
-    return render_to_response('scan.html')
-    
+    return render_to_response('dashboard.html')
+
+@login_required
+def view_users(request):
+    users_list= User.objects.all()
+    return render_to_response('users.html', {'users_list': users_list})
+
 def log_in(request):
+    if request.user.is_authenticated():
+        return render_to_response('dashboard.html', {'user': request.user})
     state = ""
     username = password = ''
     if request.POST:
