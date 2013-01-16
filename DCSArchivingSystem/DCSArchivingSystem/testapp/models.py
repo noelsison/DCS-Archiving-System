@@ -28,26 +28,26 @@ class Course(models.Model):
         return self.name + ", " + self.department.name
 
 
-#class UserProfile(models.Model):
-#    user            = models.OneToOneField(User)
-#    middlename      = models.CharField(max_length=32, null=True, blank=True)
-#    photo           = models.FileField(upload_to='photos', null=True, blank=True)
-#    birthday        = models.DateField(null=True, blank=True)
-#    course          = models.ForeignKey(Course, null=True, blank=True)
-#    highest_degree_attained = models.CharField(max_length=100, null=True, blank=True)
-#    length_of_service       = models.CharField(max_length=100, null=True, blank=True)
-#
-#    def save(self, *args, **kwargs):
-#        if not self.pk:
-#            try:
-#                p = UserProfile.objects.get(user=self.user)
-#                self.pk = p.pk
-#            except UserProfile.DoesNotExist:
-#                pass
-#        super(UserProfile, self).save(*args, **kwargs)
-#
-#    def __unicode__(self):
-#        return self.user.username+': '+ self.user.last_name + ", " + self.user.first_name
+class UserProfile(models.Model):
+    user            = models.OneToOneField(User)
+    middlename      = models.CharField(max_length=32, null=True, blank=True)
+    photo           = models.FileField(upload_to='photos', null=True, blank=True)
+    birthday        = models.DateField(null=True, blank=True)
+    course          = models.ForeignKey(Course, null=True, blank=True)
+    highest_degree_attained = models.CharField(max_length=100, null=True, blank=True)
+    length_of_service       = models.CharField(max_length=100, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            try:
+                p = UserProfile.objects.get(user=self.user)
+                self.pk = p.pk
+            except UserProfile.DoesNotExist:
+                pass
+        super(UserProfile, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return self.user.username+': '+ self.user.last_name + ", " + self.user.first_name
 
 
 class Faculty(models.Model):
