@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.template import RequestContext
 import scanner
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -24,8 +25,12 @@ def dashboard(request):
 
 @login_required
 def scan(request):
-    scanner.SimpleApp(0).MainLoop()
-    return render_to_response('dashboard.html')
+    location = "foo://test"
+    res = HttpResponse(location, status=302)
+    res['Location'] = location
+    return res
+    #scanner.SimpleApp(0).MainLoop()
+    #return render_to_response('dashboard.html')
 
 @login_required
 def view_users(request):

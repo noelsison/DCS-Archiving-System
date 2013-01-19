@@ -6,7 +6,7 @@ XferByFile='File'
 XferNatively='Natively'
 
 tmpfilename="tmp.bmp"
-OverrideXferFileName = 'c:/twainxfer.jpg'
+OverrideXferFileName = 'c:/users/marc/documents/twainxfer.jpg'
 
 class CannotWriteTransferFile(Exception):
     pass

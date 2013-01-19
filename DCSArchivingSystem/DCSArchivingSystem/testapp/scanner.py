@@ -95,4 +95,4 @@ class SimpleApp(wx.App):
         self.SetTopWindow(frame)
         return 1
 
-#SimpleApp(0).MainLoop()
+SimpleApp(0).MainLoop()
