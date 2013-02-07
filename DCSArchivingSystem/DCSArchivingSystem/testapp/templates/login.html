@@ -9,6 +9,19 @@
 
 {% block content %}
 
-
+    <div class="hero-unit"> 
+        <h1>DCS Archiving System</h1>
+        <p>
+			<form action="." method="post"> {% csrf_token %}
+				<input class="input-medium" type="text" name="username" placeholder="Username"/>
+				<input class="input-medium" type="password" name="password" placeholder="Password" value="" />
+				<button class="btn btn-primary" type="submit">Log in</button>
+				<div>
+					<label>{{ state }}</label>
+				</div>
+			</form>
+        </p>
+	</div>
+		
 
 {% endblock %}

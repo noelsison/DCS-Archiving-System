@@ -16,19 +16,13 @@
 {% block body %}
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
-			<a class="brand" href="#">DCS Archiving System</a>
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">Menu <span class="icon-bar"></span></a>
-			<div class="nav-collapse collapse">
-				<ul class="nav pull-right">
-					<li class=""><a href="/dashboard/">Home</a>
-					<li class=""><a href="/scanpage/">Scan</a>
-					<li class=""><a href="/users/">Faculty</a>
-					<li class=""><a href="/logout/">Log out</a>
-				</ul>
-			</div>
+        <ul class="nav pull-right">
+            <a class="btn btn-primary" href="/dashboard/">Home</a>
+            <a class="btn btn-primary" href="/users/">View Users</a>
+            <a class="btn btn-primary" href="/logout/">Log out</a>
+        </ul>
         </div>
     </div>
-	
     <div class="container">
     <p class="template_body">
     {% block content %}{% endblock %}
