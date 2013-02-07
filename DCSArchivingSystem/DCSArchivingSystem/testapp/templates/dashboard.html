@@ -8,21 +8,30 @@
 {% endblock %}
 
 {% block content %}
-
-
-
 	
-	<div class="hero-unit">
+	<br><div class="hero-unit">
 		<h1>Welcome</h1>
-			<p>Start by scanning a file.</p>
+			<p>Navigate.... </p>
+			<p>Say stuff here..</p>
 		</h1>			
-			
-		<form method="LINK" action="/scan/">
-		<button class="btn btn-primary" input type="submit" calue="Scan">Scan</button>
-		</form>
-			
-		</div>
-		
-    </div>
+	</div>
+
+	<div class="row">
+        <div class="span4">
+			<h2>Scan</h2>
+				<p>Begin by scanning a faculty record, and uploading it to the database.</p>
+				<p><a class="btn" href="/scanpage/">Scan &raquo;</a></p>
+            </div>
+            <div class="span4">
+				<h2>Profile</h2>
+				<p>View and update a faculty profile.</p>
+				<p><a class="btn" href="/users/">View profile &raquo;</a></p>
+            </div>
+            <div class="span4">
+				<h2>Records</h2>
+				<p>View, download, and print faculty records.</p>
+				<p><a class="btn" href="#">Records &raquo;</a></p>
+            </div>
+        </div>	
 
 {% endblock %}

@@ -12,7 +12,6 @@ class College(models.Model):
     def __unicode__(self):
         return self.name
 
-
 class Department(models.Model):
     name            = models.CharField(max_length=64)
     college         = models.ForeignKey(College)
@@ -28,34 +27,43 @@ class Course(models.Model):
         return self.name + ", " + self.department.name
 
 
-class UserProfile(models.Model):
-    user            = models.OneToOneField(User)
-    middlename      = models.CharField(max_length=32, null=True, blank=True)
+#class UserProfile(models.Model):
+#    user            = models.OneToOneField(User)
+#    middlename      = models.CharField(max_length=32, null=True, blank=True)
+#    photo           = models.FileField(upload_to='photos', null=True, blank=True)
+#    birthday        = models.DateField(null=True, blank=True)
+#    course          = models.ForeignKey(Course, null=True, blank=True)
+#    highest_degree_attained = models.CharField(max_length=100, null=True, blank=True)
+#    length_of_service       = models.CharField(max_length=100, null=True, blank=True)
+
+#    def save(self, *args, **kwargs):
+#        if not self.pk:
+#            try:
+#                p = UserProfile.objects.get(user=self.user)
+#                self.pk = p.pk
+#            except UserProfile.DoesNotExist:
+#                pass
+#        super(UserProfile, self).save(*args, **kwargs)
+
+#    def __unicode__(self):
+#        return self.user.username+': '+ self.user.last_name + ", " + self.user.first_name
+
+class Faculty(models.Model):
+    user            = models.ForeignKey(User)
+    first_name      = models.CharField(max_length=64, null=True, blank=True)
+    middle_name     = models.CharField(max_length=32, null=True, blank=True)
+    last_name       = models.CharField(max_length=32, null=True, blank=True)
     photo           = models.FileField(upload_to='photos', null=True, blank=True)
     birthday        = models.DateField(null=True, blank=True)
     course          = models.ForeignKey(Course, null=True, blank=True)
     highest_degree_attained = models.CharField(max_length=100, null=True, blank=True)
     length_of_service       = models.CharField(max_length=100, null=True, blank=True)
 
-    def save(self, *args, **kwargs):
-        if not self.pk:
-            try:
-                p = UserProfile.objects.get(user=self.user)
-                self.pk = p.pk
-            except UserProfile.DoesNotExist:
-                pass
-        super(UserProfile, self).save(*args, **kwargs)
-
-    def __unicode__(self):
-        return self.user.username+': '+ self.user.last_name + ", " + self.user.first_name
-
-
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
-        profile, created = UserProfile.objects.get_or_create(user=instance)
+        profile, created = Faculty.objects.get_or_create(user=instance)
 
 post_save.connect(create_user_profile, sender=User)
-
 
 class Alternate_email(models.Model):
     user            = models.ForeignKey(User)
@@ -105,8 +113,6 @@ class Log(models.Model):
     action          = models.ForeignKey(Action)
     file            = models.ForeignKey(File)
     timestamp       = models.DateTimeField()
-
-
 
 # Register Models to Django Admin
 admin.site.register(Department)
