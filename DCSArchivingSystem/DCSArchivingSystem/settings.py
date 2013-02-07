@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Django settings for DCSArchivingSystem project.
 
 import os
@@ -334,4 +333,3 @@ LOGGING = {
         },
     }
 }
->>>>>>> origin/cha

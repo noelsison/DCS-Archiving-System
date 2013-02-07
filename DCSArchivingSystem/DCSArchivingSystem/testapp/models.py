@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
@@ -262,4 +261,3 @@ admin.site.register(Transaction)
 admin.site.register(File)
 admin.site.register(Action)
 admin.site.register(Log)
->>>>>>> origin/cha
